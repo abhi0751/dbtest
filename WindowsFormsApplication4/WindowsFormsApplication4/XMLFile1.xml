@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Builds>
+  <Buildplan>
+    <BuildPlanNo>123456</BuildPlanNo>
+    <isDeploymentRequired>Yes</isDeploymentRequired>
+    <DeploymentType>WebDeploy</DeploymentType>
+    <BambooBuildPath>d:\abc</BambooBuildPath>
+    <DestinationServerPath>\\192.168.1.5\test</DestinationServerPath>
+    <BambooAdmin></BambooAdmin>
+    <DetinationServerAdmin></DetinationServerAdmin>
+    <PostSuccessfullCopyEmailRequired>Yes</PostSuccessfullCopyEmailRequired>
+   <EmailIdForPostCopy>xyz@abc.com</EmailIdForPostCopy>
+  </Buildplan>
+<Buildplan>
+    <BuildPlanNo>121451</BuildPlanNo>
+    <isDeploymentRequired>No</isDeploymentRequired>
+    <DeploymentType>File Copy</DeploymentType>
+    <BambooBuildPath>d:\abc</BambooBuildPath>
+    <DestinationServerPath>\\192.168.1.5\test</DestinationServerPath>
+    <BambooAdmin></BambooAdmin>
+    <DetinationServerAdmin></DetinationServerAdmin>
+    <PostSuccessfullCopyEmailRequired>Yes</PostSuccessfullCopyEmailRequired>
+   <EmailIdForPostCopy>xyz@abc.com</EmailIdForPostCopy>
+  </Buildplan>
+  
+<Buildplan>
+    <BuildPlanNo>123456</BuildPlanNo>
+    <isDeploymentRequired>Yes</isDeploymentRequired>
+    <DeploymentType>WebDeploy or File Copy</DeploymentType>
+    <BambooBuildPath>d:\abc</BambooBuildPath>
+    <DestinationServerPath>\\192.168.1.5\test</DestinationServerPath>
+    <BambooAdmin></BambooAdmin>
+    <DetinationServerAdmin></DetinationServerAdmin>
+    <PostSuccessfullCopyEmailRequired>Yes</PostSuccessfullCopyEmailRequired>
+   <EmailIdForPostCopy>xyz@abc.com</EmailIdForPostCopy>
+  </Buildplan>
+
+</Builds>

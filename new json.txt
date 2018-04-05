@@ -1,0 +1,53 @@
+{
+  "TenantName": "ests",
+  "TenentServices": [
+   {
+      
+      "Clusters": [
+        "estsam2.kusto.windows.net",
+        "estsbl2.kusto.windows.net"
+
+      ],
+     
+      "AuthType":"AAD",
+      "ThumbprintKeyVaultKey":"",
+      "SASTokenKeyvaultkeyId":"SASTokenKeyvaultKeyID",
+      "FileNameTemplate": "<FolderName>{TenentName}_{ServiceName}_{ClusterName}_{yyyy}{MM}{dd}",
+      "DataBaseName": "ESTS",
+      "AzureBlobStorageContainerName": "kusto",
+     "TenentServiceName": "cpu_memory",
+      "TenentServiceQuery": "cluster('{clusterName}').database('{DataBaseName}').CounterTable | where TIMESTAMP >= datetime(SliceStartDate) and TIMESTAMP < datetime(SliceEndDate)| where SliceSymbol == @'ProdSlices'| where  CounterName == '\\Processor(_Total)\\% Processor Time' or CounterName == '\\Memory\\Available MBytes' | project Interval = TIMESTAMP, Role, Datacenter = DataCenter, ScaleUnit, RoleInstance, Key = CounterName, CounterValue|summarize MetricReadingCount=count(CounterValue), AverageMetric=round(avg(CounterValue),4) by bin(Interval,3m), Role, Datacenter, ScaleUnit, RoleInstance, Key",
+      "Frequency": "Daily",
+     "PipeLineStartDate": "2017-12-06",
+      "PipeLineEndDate": "2017-12-07",
+"IsPaused": "false"
+    },
+	{
+  "TenantName": "ests",
+  "TenentServices": [
+   {
+      
+      "Clusters": [
+        "estsff.kusto.usgovcloudapi.net",
+        "estschina.kusto.chinacloudapi.cn",
+		"estsbf.kusto.cloudapi.de"
+
+      ],
+     
+      "AuthType":"Certificate",
+       "ThumbprintKeyVaultKey":"thumbprintkeyvaultkeyid",
+      "SASTokenKeyvaultkeyId":"SASTokenKeyvaultKeyID",
+	  "FolderName":"shubham",
+      "FileNameTemplate": "{TenentName}_{ServiceName}_{ClusterName}_{yyyy}{MM}{dd}",
+      "DataBaseName": "ESTS",
+      "AzureBlobStorageContainerName": "kusto",
+     "TenentServiceName": "cpu_memory",
+      "TenentServiceQuery": "cluster('{clusterName}').database('{DataBaseName}').CounterTable | where TIMESTAMP >= datetime(SliceStartDate) and TIMESTAMP < datetime(SliceEndDate)| where SliceSymbol == @'ProdSlices'| where  CounterName == '\\Processor(_Total)\\% Processor Time' or CounterName == '\\Memory\\Available MBytes' | project Interval = TIMESTAMP, Role, Datacenter = DataCenter, ScaleUnit, RoleInstance, Key = CounterName, CounterValue|summarize MetricReadingCount=count(CounterValue), AverageMetric=round(avg(CounterValue),4) by bin(Interval,3m), Role, Datacenter, ScaleUnit, RoleInstance, Key",
+      "Frequency": "Daily",
+     "PipeLineStartDate": "2017-12-06",
+      "PipeLineEndDate": "2017-12-07",
+"IsPaused": "false"
+    },
+	
+  ]
+}
